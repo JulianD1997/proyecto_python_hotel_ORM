@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>controller package &#8212; documentación de aplicacion hotel - 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=0.7.0-1" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <script src="_static/js/petite-vue.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" /> 
+  </head><body>
+
+<div id="top_nav">
+    
+
+    <nav>
+        <p id="toggle_sidebar">
+            <a href="#" title="Toggle sidebar">|||</a>
+        </p>
+        <h1><a href="index.html" title="Go to homepage">documentación de aplicacion hotel - 1.0.0</a></h1>
+
+        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
+    <template v-if="mode == 'light'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'dark'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'darkest'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+</a>
+
+<script>
+(function() {
+    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
+
+    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+    if (initialMode) {
+        // Make sure the value in local storage is valid
+        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
+            initialMode = 'light'
+            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+        }
+    } else {
+        // Check if the client prefers dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            initialMode = 'dark'
+        } else {
+            initialMode = 'light'
+        }
+        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    }
+
+    document.documentElement.dataset.mode = initialMode
+
+    PetiteVue.createApp({
+        'mode': initialMode,
+        handleClick() {
+            let currentMode = this.mode
+
+            if (currentMode == 'light') {
+                this.mode = 'dark'
+            } else if (currentMode == 'dark') {
+                this.mode = 'darkest'
+            } else if (currentMode == 'darkest') {
+                this.mode = 'light'
+            }
+
+            document.documentElement.dataset.mode = this.mode
+            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
+
+            console.log(this.mode)
+        }
+    }).mount('#mode_toggle')
+})()
+</script>
+            <p class="mobile_search_link">
+                <a href="search.html" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
+                    </svg>
+                </a>
+            </p>
+        
+
+        <div class="searchbox_wrapper">
+            
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        </div>
+      </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="controller-package">
+<h1>controller package<a class="headerlink" href="#controller-package" title="Enlace permanente a este encabezado">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Enlace permanente a este encabezado">¶</a></h2>
+</section>
+<section id="module-controller.control">
+<span id="controller-control-module"></span><h2>controller.control module<a class="headerlink" href="#module-controller.control" title="Enlace permanente a este encabezado">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="controller.control.Controller">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controller.control.</span></span><span class="sig-name descname"><span class="pre">Controller</span></span><a class="reference internal" href="_modules/controller/control.html#Controller"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.action_press">
+<span class="sig-name descname"><span class="pre">action_press</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.action_press"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.action_press" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Flujo de control del botón multifuncional donde dependiendo de su valor
+tomara un método de esta clase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client_data</strong> – argumento obtenido de la interfaz esta variable es un</p>
+</dd>
+</dl>
+<p>diccionario que tiene todos los datos de los formularios.
+:module: view.gui.Interface.format_data_client.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.avalible_rooms">
+<span class="sig-name descname"><span class="pre">avalible_rooms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_button</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room_form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.avalible_rooms"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.avalible_rooms" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Se encarga de mostrar las habitaciones disponibles en el momento, recibe 5 argumentos
+event: para conocer que se seleccionó una fecha del calendario
+variable_button: este mostrara todas las habitaciones cuando el valor botón multifuncional
+sea (Search)
+room_form: comboBox de modelo vista
+entry_date y exit_date = las fechas en las cuales se desea realizar un reserva.
+:param event: evento cuando se selecciona una fecha de salida y de entrada.
+:module: view.gui.Interface.__date_event.
+:param variable_button: parámetro que nos indica el valor de botón multifuncional.
+:module: view.gui.Interface.self.variable_button.
+:param room_form: comboBox de la interfaz se requiere para actualizarlo con las habitaciones
+disponibles o con todas las habitaciones del hotel.
+:module: view.gui.Interface.self.room_form.
+:param entry_date: fecha de entrada o fecha de inicio de reserva.
+:module: view.gui.Interface.self.entry_date.
+:param exit_date: fecha de salida o fecha de finalización de reserva.
+:module: view.gui.Interface.self.exit_date.
+:returns: retorna los valores que obtendrá el comboBox.
+:module: view.gui.Interface.self.room_form.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.create_client">
+<span class="sig-name descname"><span class="pre">create_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.create_client"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.create_client" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Este apartado se encarga de crear el cliente nuevo, recibe todos los datos
+del cliente a crear, organiza estos datos en el modelo cliente, convierte
+las fechas tipos date, luego envía todos los datos organizados al módulo
+database para que este se encargue de crear el cliente en la tabla de base
+de datos, este módulo está entre un bloque try except en dado caso en que
+suceda un error, retornando un aviso que indique si el cliente fue creado
+o no.
+:param client_data: argumento obtenido de la interfaz esta variable es un
+diccionario que tiene todos los datos de los formularios.
+:module: view.gui.Interface.format_data_client
+:returns: tiene un retorno por medio de un mensaje de aviso este mensaje
+try si no sucedió ningún error retorna que el cliente fue creado correctamente
+except si sucedió un error retorna que el cliente no fue creado correctamente</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.create_table">
+<span class="sig-name descname"><span class="pre">create_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.create_table"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.create_table" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>crea la tabla cliente en la base de datos</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.delete_client">
+<span class="sig-name descname"><span class="pre">delete_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.delete_client"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.delete_client" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Eliminación de un cliente,
+se procede a seleccionar el ID del cliente enfocado en el treeview
+donde se ejecuta un cuadro de texto que permite validar si realmente desea
+borrar ese cliente, cuando esté la confirmación sea verdadera procede a
+eliminarlo y enviar un mensaje de satisfacción, si llega a ocurrir algún
+error este será notificado.
+Si la confirmación es falsa, se envía un mensaje de texto informando que
+seleccione el cliente a eliminar.
+:param client[“text”]: con la instancia creada en la interfaz obtenemos el ID del cliente
+que se desea borrar por medio de la selección de este en el treeview.
+:module: view.gui.Interface.__tree_view.
+:returns: Primero pide confirmar que se desea realmente borrar el cliente si se
+acepta, retorna un cuadro de texto donde se indica que el cliente fue borrado
+correctamente o de suceder un error, retorna que el cliente no fue eliminado correctamente,
+en dado caso que no se acepte borrar el cliente retorna un mensaje que indica que seleccione
+el cliente que se desea borrar.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.query_client">
+<span class="sig-name descname"><span class="pre">query_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.query_client"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.query_client" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>En este método sucede la búsqueda de clientes por medio de los parámetros
+que el usuario ingrese, recibe dos parámetros que el treeview actualizar
+la visualización de los clientes filtrados y el segundo argumento los datos
+a filtrar.
+Se inicializan variables de caracteres que corresponden a la búsqueda donde estás, son
+modificadas cuando la longitud de algún dato es mayor a 0. Se utiliza condicionales
+para longitudes mayores a 0 modificando así la búsqueda filtrada de los clientes.
+:param tree: este parametro es el treeview de nuestra interfaz en el cual
+se muestran los datos, recibe este argumento para eliminar los datos que tiene
+y actualizarlos con los datos filtrados.
+:param client_data:argumento obtenido de la interfaz esta variable es un
+diccionario que tiene todos los datos de los formularios.
+:module: view.gui.Interface.__tree_view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.read_clients">
+<span class="sig-name descname"><span class="pre">read_clients</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.read_clients"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.read_clients" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Este método se encarga de leer todos los clients que estén registrados.
+Recibe un parámetro el cual es el treeview para proceder a eliminar todos
+los datos que estén dentro del él y luego insertar los registros recibidos
+del modelo database (read_clients).
+:param tree: este parametro es el treeview de nuestra interfaz en el cual
+se muestran los datos, recibe este argumento para eliminar los datos que tiene
+y actualizarlos con los de la base de datos.
+:module: view.gui.Interface.__tree_view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.run_window">
+<span class="sig-name descname"><span class="pre">run_window</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.run_window"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.run_window" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Ejecuta la aplicación</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.update_client">
+<span class="sig-name descname"><span class="pre">update_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.update_client"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.update_client" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Se encarga de actualizar el cliente recibiendo los datos del cliente
+se estructura estos datos en el modelo client se modela la fecha a tipo date
+y se procede a la ejecución del update_client del modelo database.
+Este proceso está envuelto entre un try except, que nos retornara un diálogo de texto
+correcto o incorrecto.
+:param client_data: argumento obtenido de la interfaz esta variable es un
+diccionario que tiene todos los datos de los formularios.
+:module: view.gui.Interface.format_data_client.
+:returns: tiene un retorno por medio de un mensaje de aviso, este mensaje
+try si no sucedió ningún error, retorna que el cliente fue actualizado correctamente
+except si sucedió un error retorna que el cliente no fue actualizado correctamente</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.validate_data">
+<span class="sig-name descname"><span class="pre">validate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name_error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dni_error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room_error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.validate_data"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.validate_data" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Método para la validación de datos ingresados en la parte de formularios de la vista
+permite que solo se ingrese datos alfabéticos en los formularios nombre, apellido y solo números
+en el apartado de DNI a su vez que solo se estén ingresando un máximo de 8 dígitos
+de no ser correcto o en caso de uno ingresar valores se mostraran etiquetas abajo de los formularios
+indicando que estos son requeridos. Retornando un booleano para que el método action_press realice
+el debido flujo del programa.
+:param name_error: etiqueta que nos indicara que el campo nombre está vacío.
+:module: view.gui.Interface.self.name_error.
+:param last_name_error: etiqueta que nos indicara que el campo apellido está vacío.
+:module: view.gui.Interface.self.last_name_error.
+:param dni_error: etiqueta que nos indicara que el campo DNI es erróneo o está vacío.
+:module: view.gui.Interface.self.dni_error.
+:param room_error: etiqueta que nos indicara que no se seleccionó una habitación.
+:module: view.gui.Interface.self.room_error.
+:param client_data: argumento obtenido de la interfaz esta variable es un
+diccionario que tiene todos los datos de los formularios.
+:module: view.gui.Interface.format_data_client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Devuelve<span class="colon">:</span></dt>
+<dd class="field-odd"><p>retorna un booleano.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.validate_number">
+<span class="sig-name descname"><span class="pre">validate_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.validate_number"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.validate_number" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Válida que el valor que se esté ingresando sea numérico.
+:param text: este parámetro es requerido para la validación de los cuadros
+de formularios, este módulo válida los intVar de la interfaz.
+:module: model.hotel_model.Hotel_model.validate_number.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controller.control.Controller.validate_string">
+<span class="sig-name descname"><span class="pre">validate_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controller/control.html#Controller.validate_string"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#controller.control.Controller.validate_string" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Válida que el valor que se está ingresando sea alfabético.
+:param text: este parámetro es requerido para la validación de los cuadros
+de formularios, este módulo válida los stringVar de la interfaz.
+:module: view.gui.Interface.treeview.
+:returns: retorna un booleano que nos envía el modelo.
+:module: model.hotel_model.Hotel_model.validate_string</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-controller">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-controller" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Package controller</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    
+        <div id="show_right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon"><</span><span>Page contents<span></a></p>
+        </div>
+
+        <div id="right_sidebar">
+            <p><a class="toggle_right_sidebar" href="#"><span class="icon">></span><span>Page contents:<span></a></p>
+            <div class="page_toc">
+                <ul>
+<li><a class="reference internal" href="#">controller package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-controller.control">controller.control module</a></li>
+<li><a class="reference internal" href="#module-controller">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+    
+
+      <div class="clearer"></div>
+    </div>
+    <div class="button_nav_wrapper">
+        <div class="button_nav">
+            <div class="left">
+                
+            </div>
+
+            <div class="right">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" role="contentinfo">
+        &#169; Derechos de autor 2022, Julian Casallas.
+      Creado usando <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+    </div>
+
+<p id="theme_credit">Styled using the <a href="https://github.com/piccolo-orm/piccolo_theme">Piccolo Theme</a></p>
+  </body>
+</html>

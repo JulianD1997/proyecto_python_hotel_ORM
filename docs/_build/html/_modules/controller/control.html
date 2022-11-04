@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>controller.control &#8212; documentación de aplicacion hotel - 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic_mod.css?v=0.7.0-1" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <script src="../../_static/js/petite-vue.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+  </head><body>
+
+<div id="top_nav">
+    
+
+    <nav>
+        <p id="toggle_sidebar">
+            <a href="#" title="Toggle sidebar">|||</a>
+        </p>
+        <h1><a href="../../index.html" title="Go to homepage">documentación de aplicacion hotel - 1.0.0</a></h1>
+
+        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
+    <template v-if="mode == 'light'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'dark'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+
+    <template v-if="mode == 'darkest'">
+        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
+    </template>
+</a>
+
+<script>
+(function() {
+    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
+
+    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+    if (initialMode) {
+        // Make sure the value in local storage is valid
+        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
+            initialMode = 'light'
+            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+        }
+    } else {
+        // Check if the client prefers dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            initialMode = 'dark'
+        } else {
+            initialMode = 'light'
+        }
+        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    }
+
+    document.documentElement.dataset.mode = initialMode
+
+    PetiteVue.createApp({
+        'mode': initialMode,
+        handleClick() {
+            let currentMode = this.mode
+
+            if (currentMode == 'light') {
+                this.mode = 'dark'
+            } else if (currentMode == 'dark') {
+                this.mode = 'darkest'
+            } else if (currentMode == 'darkest') {
+                this.mode = 'light'
+            }
+
+            document.documentElement.dataset.mode = this.mode
+            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
+
+            console.log(this.mode)
+        }
+    }).mount('#mode_toggle')
+})()
+</script>
+            <p class="mobile_search_link">
+                <a href="../../search.html" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
+                    </svg>
+                </a>
+            </p>
+        
+
+        <div class="searchbox_wrapper">
+            
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        </div>
+      </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Código fuente para controller.control</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">tkinter</span>
+<span class="kn">import</span> <span class="nn">model.client</span> <span class="k">as</span> <span class="nn">client_model</span>
+<span class="kn">import</span> <span class="nn">model.database</span> <span class="k">as</span> <span class="nn">db</span>
+<span class="kn">import</span> <span class="nn">model.hotel_model</span> <span class="k">as</span> <span class="nn">hotel_model</span>
+<span class="kn">import</span> <span class="nn">view.gui</span> <span class="k">as</span> <span class="nn">view</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Módulo encargado de todo el control de esta aplicación</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Controller"><a class="viewcode-back" href="../../controller.html#controller.control.Controller">[documentos]</a><span class="k">class</span> <span class="nc">Controller</span> <span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Se inicializa todas las variables creando instancias en las diferentes clases de modelo</span>
+<span class="sd">            y la vista</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">CRUD</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span> <span class="o">=</span> <span class="n">hotel_model</span><span class="o">.</span><span class="n">Hotel_model</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_table</span><span class="p">()</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">Interface</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span>
+        
+<div class="viewcode-block" id="Controller.run_window"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.run_window">[documentos]</a>    <span class="k">def</span> <span class="nf">run_window</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Ejecuta la aplicación</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">run_window</span><span class="p">()</span>  </div>
+                    
+<div class="viewcode-block" id="Controller.create_table"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.create_table">[documentos]</a>    <span class="k">def</span> <span class="nf">create_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            crea la tabla cliente en la base de datos</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">create_table</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Controller.create_client"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.create_client">[documentos]</a>    <span class="k">def</span> <span class="nf">create_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">client_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Este apartado se encarga de crear el cliente nuevo, recibe todos los datos</span>
+<span class="sd">            del cliente a crear, organiza estos datos en el modelo cliente, convierte</span>
+<span class="sd">            las fechas tipos date, luego envía todos los datos organizados al módulo </span>
+<span class="sd">            database para que este se encargue de crear el cliente en la tabla de base</span>
+<span class="sd">            de datos, este módulo está entre un bloque try except en dado caso en que </span>
+<span class="sd">            suceda un error, retornando un aviso que indique si el cliente fue creado </span>
+<span class="sd">            o no.</span>
+<span class="sd">            :param client_data: argumento obtenido de la interfaz esta variable es un</span>
+<span class="sd">            diccionario que tiene todos los datos de los formularios.</span>
+<span class="sd">            :module: view.gui.Interface.format_data_client</span>
+<span class="sd">            :returns: tiene un retorno por medio de un mensaje de aviso este mensaje </span>
+<span class="sd">            try si no sucedió ningún error retorna que el cliente fue creado correctamente</span>
+<span class="sd">            except si sucedió un error retorna que el cliente no fue creado correctamente </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span> <span class="p">:</span> 
+            <span class="n">entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;entry_date&#39;</span><span class="p">])</span>
+            <span class="n">exit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;exit_date&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client_model</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">],</span>
+                    <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;dni&#39;</span><span class="p">],</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;room&#39;</span><span class="p">],</span><span class="n">entry</span><span class="p">,</span><span class="n">exit</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span>
+                                <span class="n">name</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span>
+                                <span class="n">last_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_last_name</span><span class="p">(),</span>
+                                <span class="n">DNI</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_dni</span><span class="p">(),</span>
+                                <span class="n">room</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_room</span><span class="p">(),</span>
+                                <span class="n">date_entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_entry_date</span><span class="p">(),</span>
+                                <span class="n">date_exit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_exit_date</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">set_variables</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;Create client&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;The Client was created successfully&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;Create client&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Error, the client was not created successfully&quot;</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Controller.read_clients"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.read_clients">[documentos]</a>    <span class="k">def</span> <span class="nf">read_clients</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tree</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Este método se encarga de leer todos los clients que estén registrados.</span>
+<span class="sd">            Recibe un parámetro el cual es el treeview para proceder a eliminar todos </span>
+<span class="sd">            los datos que estén dentro del él y luego insertar los registros recibidos</span>
+<span class="sd">            del modelo database (read_clients).</span>
+<span class="sd">            :param tree: este parametro es el treeview de nuestra interfaz en el cual </span>
+<span class="sd">            se muestran los datos, recibe este argumento para eliminar los datos que tiene</span>
+<span class="sd">            y actualizarlos con los de la base de datos.</span>
+<span class="sd">            :module: view.gui.Interface.__tree_view</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">clients</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">get_children</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">client</span> <span class="ow">in</span> <span class="n">clients</span><span class="p">:</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">client</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">read_clients</span><span class="p">():</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                     <span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">last_name</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">DNI</span><span class="p">,</span>
+                             <span class="n">client</span><span class="o">.</span><span class="n">room</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">date_entry</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">date_exit</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Controller.query_client"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.query_client">[documentos]</a>    <span class="k">def</span> <span class="nf">query_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tree</span><span class="p">,</span><span class="n">client_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            En este método sucede la búsqueda de clientes por medio de los parámetros</span>
+<span class="sd">            que el usuario ingrese, recibe dos parámetros que el treeview actualizar </span>
+<span class="sd">            la visualización de los clientes filtrados y el segundo argumento los datos </span>
+<span class="sd">            a filtrar.</span>
+<span class="sd">            Se inicializan variables de caracteres que corresponden a la búsqueda donde estás, son </span>
+<span class="sd">            modificadas cuando la longitud de algún dato es mayor a 0. Se utiliza condicionales </span>
+<span class="sd">            para longitudes mayores a 0 modificando así la búsqueda filtrada de los clientes.</span>
+<span class="sd">            :param tree: este parametro es el treeview de nuestra interfaz en el cual </span>
+<span class="sd">            se muestran los datos, recibe este argumento para eliminar los datos que tiene</span>
+<span class="sd">            y actualizarlos con los datos filtrados.</span>
+<span class="sd">            :param client_data:argumento obtenido de la interfaz esta variable es un</span>
+<span class="sd">            diccionario que tiene todos los datos de los formularios.</span>
+<span class="sd">            :module: view.gui.Interface.__tree_view</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">search_client</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">search_name</span> <span class="o">=</span> <span class="n">search_last_name</span> <span class="o">=</span> <span class="n">search_dni</span> <span class="o">=</span> <span class="n">search_room</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">search_entry_date</span> <span class="o">=</span> <span class="s2">&quot;0000-01-01&quot;</span>
+        <span class="n">search_exit_date</span> <span class="o">=</span> <span class="s2">&quot;9999-12-31&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">search_client</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">search_name</span> <span class="o">=</span> <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">search_client</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">search_last_name</span> <span class="o">=</span> <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;dni&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">search_client</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">search_dni</span> <span class="o">=</span> <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;dni&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;room&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Select&quot;</span><span class="p">:</span>
+            <span class="n">search_client</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">search_room</span> <span class="o">=</span> <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;room&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;entry_date&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">search_client</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">search_entry_date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;entry_date&#39;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;exit_date&#39;</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">search_client</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">search_exit_date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;entry_date&#39;</span><span class="p">])</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Al finalizar la comprobación y a su vez la modificación de los variables de búsqueda, </span>
+<span class="sd">            se procede a ejecutar search_client del módulo database donde este método nos retorna</span>
+<span class="sd">            los datos encontrados en la base de datos.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">search_client</span><span class="p">(</span>
+                                <span class="n">name</span><span class="o">=</span> <span class="n">search_name</span><span class="p">,</span>
+                                <span class="n">last_name</span> <span class="o">=</span> <span class="n">search_last_name</span><span class="p">,</span>
+                                <span class="n">DNI</span> <span class="o">=</span> <span class="n">search_dni</span><span class="p">,</span>
+                                <span class="n">room</span> <span class="o">=</span> <span class="n">search_room</span><span class="p">,</span>
+                                <span class="n">date_entry</span> <span class="o">=</span> <span class="n">search_entry_date</span><span class="p">,</span>
+                                <span class="n">date_exit</span> <span class="o">=</span> <span class="n">search_exit_date</span><span class="p">)</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            A continuación se procede a realizar una condición de longitud de la variable (data) para conocer </span>
+<span class="sd">            que haya datos en ella y un booleano(search_client) para conocer que se ingresó un dato para la búsqueda.</span>
+<span class="sd">            De no haber datos o de no haber ingresado parámetros para la búsqueda, se ejecuta un aviso de diálogo donde </span>
+<span class="sd">            nos informara si el cliente no fue encontrado o de en el caso de no ingresar un valor a filtrar nos indicara </span>
+<span class="sd">            inténtelo de nuevo.</span>
+<span class="sd">            Por último, si la variable (data) tiene valores, se procede a actualizar la vista del treeview cargando estos valores</span>
+<span class="sd">            de clientes filtrados.</span>
+<span class="sd">            :returns: retorna un mensaje de alerta donde indica si el cliente filtrado no se encuentra o si no se ingresó ningún </span>
+<span class="sd">            parámetro.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">search_client</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">message_box</span><span class="p">((</span><span class="s2">&quot;Query&quot;</span><span class="p">,</span><span class="s2">&quot;The client is not exist&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">search_client</span> <span class="k">else</span> <span class="p">(</span><span class="s2">&quot;Query&quot;</span><span class="p">,</span><span class="s2">&quot;try again&quot;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">clients</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">get_children</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">client</span> <span class="ow">in</span> <span class="n">clients</span><span class="p">:</span>
+                <span class="n">tree</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">client</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                     <span class="n">values</span><span class="o">=</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">last_name</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">DNI</span><span class="p">,</span>
+                             <span class="n">client</span><span class="o">.</span><span class="n">room</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">date_entry</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">date_exit</span><span class="p">))</span></div>
+    
+<div class="viewcode-block" id="Controller.update_client"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.update_client">[documentos]</a>    <span class="k">def</span> <span class="nf">update_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">client_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Se encarga de actualizar el cliente recibiendo los datos del cliente</span>
+<span class="sd">            se estructura estos datos en el modelo client se modela la fecha a tipo date</span>
+<span class="sd">            y se procede a la ejecución del update_client del modelo database.</span>
+<span class="sd">            Este proceso está envuelto entre un try except, que nos retornara un diálogo de texto</span>
+<span class="sd">            correcto o incorrecto.</span>
+<span class="sd">            :param client_data: argumento obtenido de la interfaz esta variable es un</span>
+<span class="sd">            diccionario que tiene todos los datos de los formularios.</span>
+<span class="sd">            :module: view.gui.Interface.format_data_client.</span>
+<span class="sd">            :returns: tiene un retorno por medio de un mensaje de aviso, este mensaje </span>
+<span class="sd">            try si no sucedió ningún error, retorna que el cliente fue actualizado correctamente</span>
+<span class="sd">            except si sucedió un error retorna que el cliente no fue actualizado correctamente</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;entry_date&#39;</span><span class="p">])</span>
+            <span class="n">exit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;exit_date&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client_model</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">],</span>
+                    <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;dni&#39;</span><span class="p">],</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;room&#39;</span><span class="p">],</span><span class="n">entry</span><span class="p">,</span><span class="n">exit</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">update_client</span><span class="p">(</span>
+                                <span class="n">name</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span>
+                                <span class="n">last_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_last_name</span><span class="p">(),</span>
+                                <span class="n">DNI</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_dni</span><span class="p">(),</span>
+                                <span class="n">room</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_room</span><span class="p">(),</span>
+                                <span class="n">date_entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_entry_date</span><span class="p">(),</span>
+                                <span class="n">date_exit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_exit_date</span><span class="p">(),</span>
+                                <span class="nb">id</span> <span class="o">=</span> <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;id_client&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">set_variables</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;Update client&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;the client was updated successfully&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s2">&quot;Update client&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Error, the client was not updated successfully&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Controller.delete_client"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.delete_client">[documentos]</a>    <span class="k">def</span> <span class="nf">delete_client</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Eliminación de un cliente, </span>
+<span class="sd">            se procede a seleccionar el ID del cliente enfocado en el treeview</span>
+<span class="sd">            donde se ejecuta un cuadro de texto que permite validar si realmente desea</span>
+<span class="sd">            borrar ese cliente, cuando esté la confirmación sea verdadera procede a </span>
+<span class="sd">            eliminarlo y enviar un mensaje de satisfacción, si llega a ocurrir algún </span>
+<span class="sd">            error este será notificado. </span>
+<span class="sd">            Si la confirmación es falsa, se envía un mensaje de texto informando que </span>
+<span class="sd">            seleccione el cliente a eliminar.</span>
+<span class="sd">            :param client[&#39;text&#39;]: con la instancia creada en la interfaz obtenemos el ID del cliente</span>
+<span class="sd">            que se desea borrar por medio de la selección de este en el treeview.</span>
+<span class="sd">            :module: view.gui.Interface.__tree_view.</span>
+<span class="sd">            :returns: Primero pide confirmar que se desea realmente borrar el cliente si se</span>
+<span class="sd">            acepta, retorna un cuadro de texto donde se indica que el cliente fue borrado</span>
+<span class="sd">            correctamente o de suceder un error, retorna que el cliente no fue eliminado correctamente, </span>
+<span class="sd">            en dado caso que no se acepte borrar el cliente retorna un mensaje que indica que seleccione </span>
+<span class="sd">            el cliente que se desea borrar.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">focus</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">id_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">id_client</span> <span class="o">!=</span><span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">message_box</span><span class="p">():</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">delete_client</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">id_client</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">message_box</span><span class="p">((</span><span class="s2">&quot;Delete Client&quot;</span><span class="p">,</span><span class="s2">&quot;The client was deleted successfully&quot;</span><span class="p">))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">read_clients</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span>
+                <span class="k">except</span> <span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">message_box</span><span class="p">((</span><span class="s2">&quot;Delete Client&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Error, the client was not deleted successfully&quot;</span><span class="p">))</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">message_box</span><span class="p">((</span><span class="s2">&quot;Delete client&quot;</span><span class="p">,</span><span class="s2">&quot;please, You select the client want delete&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">set_variables</span><span class="p">()</span></div>
+    
+<div class="viewcode-block" id="Controller.avalible_rooms"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.avalible_rooms">[documentos]</a>    <span class="k">def</span> <span class="nf">avalible_rooms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event</span><span class="p">,</span><span class="n">variable_button</span><span class="p">,</span><span class="n">room_form</span><span class="p">,</span><span class="n">entry_date</span><span class="p">,</span><span class="n">exit_date</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Se encarga de mostrar las habitaciones disponibles en el momento, recibe 5 argumentos</span>
+<span class="sd">            event: para conocer que se seleccionó una fecha del calendario</span>
+<span class="sd">            variable_button: este mostrara todas las habitaciones cuando el valor botón multifuncional</span>
+<span class="sd">            sea (Search)</span>
+<span class="sd">            room_form: comboBox de modelo vista</span>
+<span class="sd">            entry_date y exit_date = las fechas en las cuales se desea realizar un reserva.</span>
+<span class="sd">            :param event: evento cuando se selecciona una fecha de salida y de entrada.</span>
+<span class="sd">            :module: view.gui.Interface.__date_event.</span>
+<span class="sd">            :param variable_button: parámetro que nos indica el valor de botón multifuncional.</span>
+<span class="sd">            :module: view.gui.Interface.self.variable_button.</span>
+<span class="sd">            :param room_form: comboBox de la interfaz se requiere para actualizarlo con las habitaciones </span>
+<span class="sd">            disponibles o con todas las habitaciones del hotel.</span>
+<span class="sd">            :module: view.gui.Interface.self.room_form.</span>
+<span class="sd">            :param entry_date: fecha de entrada o fecha de inicio de reserva.</span>
+<span class="sd">            :module: view.gui.Interface.self.entry_date.</span>
+<span class="sd">            :param exit_date: fecha de salida o fecha de finalización de reserva.</span>
+<span class="sd">            :module: view.gui.Interface.self.exit_date.</span>
+<span class="sd">            :returns: retorna los valores que obtendrá el comboBox.</span>
+<span class="sd">            :module: view.gui.Interface.self.room_form.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">variable_button</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Search&quot;</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Muestra todas las habitaciones del hotel</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">room_form</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">get_hotel_rooms</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">room_form</span>
+        <span class="k">elif</span> <span class="n">event</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">entry_date</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>\
+                            <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">exit_date</span><span class="o">.</span><span class="n">get</span><span class="p">())):</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Si se seleccionó una fecha y la fecha de entrada es menor a la de salida, </span>
+<span class="sd">                se procede a encontrar la habitación que estén disponibles entre esas fecha por medio</span>
+<span class="sd">                de la consulta de occupied_rooms_between del modelo database.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">date_one</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">entry_date</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+            <span class="n">date_two</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">date_model</span><span class="p">(</span><span class="n">exit_date</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">occupied_rooms_between</span><span class="p">(</span><span class="n">date_one</span><span class="p">,</span> <span class="n">date_two</span><span class="p">)</span>
+            <span class="n">room_form</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">avalible_rooms</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">room_form</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                De no haber un evento o si la fecha de salida es mayor que la de entrada, se muestra las</span>
+<span class="sd">                habitaciones que están disponibles en el día actual.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_db</span><span class="o">.</span><span class="n">occupied_rooms</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+            <span class="n">room_form</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">avalible_rooms</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">room_form</span></div>
+
+<div class="viewcode-block" id="Controller.validate_string"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.validate_string">[documentos]</a>    <span class="k">def</span> <span class="nf">validate_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Válida que el valor que se está ingresando sea alfabético.</span>
+<span class="sd">            :param text: este parámetro es requerido para la validación de los cuadros</span>
+<span class="sd">            de formularios, este módulo válida los stringVar de la interfaz.</span>
+<span class="sd">            :module: view.gui.Interface.treeview.</span>
+<span class="sd">            :returns: retorna un booleano que nos envía el modelo.</span>
+<span class="sd">            :module: model.hotel_model.Hotel_model.validate_string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">validate_string</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Controller.validate_number"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.validate_number">[documentos]</a>    <span class="k">def</span> <span class="nf">validate_number</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Válida que el valor que se esté ingresando sea numérico.</span>
+<span class="sd">            :param text: este parámetro es requerido para la validación de los cuadros</span>
+<span class="sd">            de formularios, este módulo válida los intVar de la interfaz.</span>
+<span class="sd">            :module: model.hotel_model.Hotel_model.validate_number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">validate_number</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Controller.validate_data"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.validate_data">[documentos]</a>    <span class="k">def</span> <span class="nf">validate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name_error</span><span class="p">,</span><span class="n">last_name_error</span><span class="p">,</span><span class="n">dni_error</span><span class="p">,</span><span class="n">room_error</span><span class="p">,</span><span class="n">client_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Método para la validación de datos ingresados en la parte de formularios de la vista</span>
+<span class="sd">            permite que solo se ingrese datos alfabéticos en los formularios nombre, apellido y solo números</span>
+<span class="sd">            en el apartado de DNI a su vez que solo se estén ingresando un máximo de 8 dígitos</span>
+<span class="sd">            de no ser correcto o en caso de uno ingresar valores se mostraran etiquetas abajo de los formularios</span>
+<span class="sd">            indicando que estos son requeridos. Retornando un booleano para que el método action_press realice</span>
+<span class="sd">            el debido flujo del programa.</span>
+<span class="sd">            :param name_error: etiqueta que nos indicara que el campo nombre está vacío.</span>
+<span class="sd">            :module: view.gui.Interface.self.name_error.</span>
+<span class="sd">            :param last_name_error: etiqueta que nos indicara que el campo apellido está vacío.</span>
+<span class="sd">            :module: view.gui.Interface.self.last_name_error.</span>
+<span class="sd">            :param dni_error: etiqueta que nos indicara que el campo DNI es erróneo o está vacío.</span>
+<span class="sd">            :module: view.gui.Interface.self.dni_error.</span>
+<span class="sd">            :param room_error: etiqueta que nos indicara que no se seleccionó una habitación.</span>
+<span class="sd">            :module: view.gui.Interface.self.room_error.</span>
+<span class="sd">            :param client_data: argumento obtenido de la interfaz esta variable es un</span>
+<span class="sd">            diccionario que tiene todos los datos de los formularios.</span>
+<span class="sd">            :module: view.gui.Interface.format_data_client.</span>
+
+<span class="sd">            :returns: retorna un booleano.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">set_labels</span><span class="p">()</span>
+        <span class="n">validate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">validate_string</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="s1">&#39;^[a-zA-ZÀ-ÿ</span><span class="se">\u00f1\u00d1</span><span class="s1">\s]+$&#39;</span><span class="p">):</span>
+            <span class="n">name_error</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;This is required&quot;</span><span class="p">)</span>
+            <span class="n">validate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">validate_string</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">],</span><span class="s1">&#39;^[a-zA-ZÀ-ÿ</span><span class="se">\u00f1\u00d1</span><span class="s1">\s]+$&#39;</span><span class="p">):</span>
+            <span class="n">last_name_error</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;This is required&quot;</span><span class="p">)</span>
+            <span class="n">validate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_hotel_model</span><span class="o">.</span><span class="n">validate_number</span><span class="p">(</span><span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;dni&#39;</span><span class="p">],</span><span class="s1">&#39;^[0-9]</span><span class="si">{8}</span><span class="s1">$&#39;</span><span class="p">):</span>
+            <span class="n">dni_error</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Invalid DNI&quot;</span><span class="p">)</span>
+            <span class="n">validate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">client_data</span><span class="p">[</span><span class="s1">&#39;room&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Select&quot;</span><span class="p">:</span>
+            <span class="n">room_error</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Not Selected&quot;</span><span class="p">)</span>
+            <span class="n">validate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">validate</span></div>
+     
+<div class="viewcode-block" id="Controller.action_press"><a class="viewcode-back" href="../../controller.html#controller.control.Controller.action_press">[documentos]</a>    <span class="k">def</span> <span class="nf">action_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">client_data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Flujo de control del botón multifuncional donde dependiendo de su valor</span>
+<span class="sd">            tomara un método de esta clase.</span>
+
+<span class="sd">            :param client_data: argumento obtenido de la interfaz esta variable es un</span>
+<span class="sd">            diccionario que tiene todos los datos de los formularios.</span>
+<span class="sd">            :module: view.gui.Interface.format_data_client.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">variable_button</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Save&#39;</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Si el botón multifuncional es Save y la validación de los datos son correctos, procede</span>
+<span class="sd">                a llamar el método create_client enviando los argumentos que este necesite y a la vez</span>
+<span class="sd">                acciona el método message_box de la vista para mostrar los mensajes de alerta que sean </span>
+<span class="sd">                necesarios.</span>
+<span class="sd">                :param varianle_button: valor del botón multifuncional, en este caso se valida que su valor</span>
+<span class="sd">                sea &quot;Save&quot;</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">name_error</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">last_name_error</span><span class="p">,</span>\
+                <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">dni_error</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">room_error</span><span class="p">,</span><span class="n">client_data</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="n">client_data</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">read_clients</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">message_box</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">variable_button</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Search&#39;</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Si el botón multifuncional es Search procede a llamar el método query_client enviando los </span>
+<span class="sd">                argumentos que este necesite(treeview, client_data)</span>
+<span class="sd">                :param varianle_button: valor del botón multifuncional, en este caso se valida que su valor</span>
+<span class="sd">                sea &quot;Search&quot;</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">query_client</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">tree</span><span class="p">,</span><span class="n">client_data</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">variable_button</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Update&#39;</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Si el botón multifuncional es Update y la validación de los datos es correcta, procede a llamar </span>
+<span class="sd">                el método update_client enviando los argumentos que este necesite(client_data) y a su vez </span>
+<span class="sd">                mostrar los mensajes de alerta.</span>
+<span class="sd">                :param varianle_button: valor del botón multifuncional, en este caso se valida que su valor</span>
+<span class="sd">                sea &quot;Update&quot;</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">name_error</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">last_name_error</span><span class="p">,</span>\
+                <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">dni_error</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">room_error</span><span class="p">,</span><span class="n">client_data</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_client</span><span class="p">(</span><span class="n">client_data</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">read_clients</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">control_view</span><span class="o">.</span><span class="n">message_box</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div></div>
+   
+    
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="clearer"></div>
+    </div>
+    <div class="button_nav_wrapper">
+        <div class="button_nav">
+            <div class="left">
+                
+            </div>
+
+            <div class="right">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" role="contentinfo">
+        &#169; Derechos de autor 2022, Julian Casallas.
+      Creado usando <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+    </div>
+
+<p id="theme_credit">Styled using the <a href="https://github.com/piccolo-orm/piccolo_theme">Piccolo Theme</a></p>
+  </body>
+</html>
